@@ -42,3 +42,9 @@ select * from AddressBook;
 --UC5:- Ability to delete a person using person's name.
 Delete AddressBook where firstName='Rahul';
 select * from AddressBook;
+
+
+--UC6:- Ability to Retrieve Person belonging to a City or State from the Address Book.
+select city,state from AddressBook;
+select * from AddressBook where state='Uttar Pradesh' 
+select * from AddressBook where city='Pune' or state='Uttar Pradesh';
