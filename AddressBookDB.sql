@@ -25,8 +25,10 @@ values('Omprakash','Khawshi','Alandi','Pune','Maharashtra','412105','8788616249'
 select * from AddressBook;
 
 insert into AddressBook values('Shubham','Seth','Patrahi Jaunpur','Jaunpur','Uttar Pradesh','222129','8172365898','shubham@gmail.com');
+insert into AddressBook values('Ajay','Seth','Kerakat','Jaunpur','Uttar Pradesh','222229','8172365898','ajay@gmail.com');
 
 insert into AddressBook values('Rahul','Nayr','Nagpur','Nagpur','Maharashtra','442203','12345678910','opre@gmail.com');
+insert into AddressBook values('Prashant','Singh','Nagpur','Nagpur','Maharashtra','442443','12345678910','prashant@gmail.com');
 
 
 --UC4:- Ability to edit existing contact person using their name.
@@ -49,6 +51,7 @@ select city,state from AddressBook;
 select * from AddressBook where state='Uttar Pradesh' 
 select * from AddressBook where city='Pune' or state='Uttar Pradesh';
 
+
 --UC7:- Ability to understand the size of address book by City and State.
 -- Here size indicates the count.
 select COUNT(city) from AddressBook;
@@ -60,3 +63,13 @@ select COUNT(state) from AddressBook;
 
 select state, count(*) as AddressCount
 from AddressBook group by (state);
+
+
+--UC8:- Ability to retrieve entries sorted alphabetically by Person’s name for a given city.
+select * from AddressBook order by city ASC;  --sorted by ASCII value of city
+
+select * from AddressBook where city = 'Pune'
+order by (firstName);
+
+select * from AddressBook where city = 'Jaunpur'
+order by (firstName);
