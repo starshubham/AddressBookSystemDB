@@ -48,3 +48,15 @@ select * from AddressBook;
 select city,state from AddressBook;
 select * from AddressBook where state='Uttar Pradesh' 
 select * from AddressBook where city='Pune' or state='Uttar Pradesh';
+
+--UC7:- Ability to understand the size of address book by City and State.
+-- Here size indicates the count.
+select COUNT(city) from AddressBook;
+
+select city, count(*) as AddressCount
+from AddressBook group by (city);
+
+select COUNT(state) from AddressBook;
+
+select state, count(*) as AddressCount
+from AddressBook group by (state);
